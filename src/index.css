@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Primary */
+  --color-primary: hsl(180, 29%, 50%);
+
+  /* Neutral */
+  --color-cyan-bg: hsl(180, 52%, 96%);
+  --color-cyan-tablet: hsl(180, 31%, 95%);
+  --color-cyan-dark-gray: hsl(180, 8%, 52%);
+  --color-cyan-very-dark: hsl(180, 14%, 20%);
+}
+
+:root {
+  /* Primary */
+  --color-primary: hsl(180, 29%, 50%);
+
+  /* Neutral */
+  --color-cyan-bg: hsl(180, 52%, 96%);
+  --color-cyan-tablet: hsl(180, 31%, 95%);
+  --color-cyan-dark-gray: hsl(180, 8%, 52%);
+  --color-cyan-very-dark: hsl(180, 14%, 20%);
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    /* soft base shadow */ 0 0 0 3px hsl(180, 29%, 50%, 0.25); /* subtle glow with primary color */
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+}

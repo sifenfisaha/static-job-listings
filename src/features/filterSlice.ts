@@ -1,21 +1,29 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { AppState, Filter } from "../types/types";
 
-const initialState: AppState = [];
+const initialState: AppState = {
+  filters: [],
+};
 
 const filterSlice = createSlice({
   name: "filter",
   initialState,
   reducers: {
     addFilter: (state, action: PayloadAction<Filter>) => {
-      state.push(action.payload);
+      const exisistingFilter = state.filters.includes(action.payload);
+      if (!exisistingFilter) {
+        state.filters.push(action.payload);
+      }
     },
     removeFilter: (state, action: PayloadAction<Filter>) => {
-      state = state.filter((item) => item !== action.payload);
+      state.filters = state.filters.filter((item) => item !== action.payload);
+    },
+    clearFilter: (state) => {
+      state.filters = [];
     },
   },
 });
 
-export const { addFilter, removeFilter } = filterSlice.actions;
+export const { addFilter, removeFilter, clearFilter } = filterSlice.actions;
 
 export default filterSlice.reducer;

@@ -2,7 +2,9 @@ import { configureStore } from "@reduxjs/toolkit";
 import FilterReducer from "../features/filterSlice";
 
 const store = configureStore({
-  reducer: FilterReducer,
+  reducer: {
+    filters: FilterReducer,
+  },
 });
 
 export default store;
